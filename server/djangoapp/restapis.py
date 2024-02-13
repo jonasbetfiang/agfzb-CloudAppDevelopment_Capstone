@@ -111,8 +111,8 @@ def store_review(url, payload):
 # - Call get_request() with specified arguments
 # - Get the returned sentiment label such as Positive or Negative
 def analyze_review_sentiments(text):
-    url = "https://api.eu-gb.natural-language-understanding.watson.cloud.ibm.com/instances/0eaba772-a37d-4b7a-9838-e99bdab39bd3"
-    api_key = "opld44C4g5OhUC9UKKGIv5zQZo-MsHNhR2wq2ex13Sz8"
+    url = "https://api.eu-gb.natural-language-understanding.watson.dab39bd3"
+    apy_key = "2ex13Sz8"
     params = {
         "text": text,
         "features": {
