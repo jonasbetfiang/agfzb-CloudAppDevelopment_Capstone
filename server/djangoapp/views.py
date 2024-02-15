@@ -23,7 +23,7 @@ def about(request):
 def contact(request):
     return render(request, 'djangoapp/contact.html')
 
-# Create a `login_request` view to handle sign in request
+# Create a `login_request` view to handle a login request.
 def login_request(request):
     context = {}
     if request.method == "POST":
@@ -39,12 +39,12 @@ def login_request(request):
     else:
         return render(request, 'djangoapp/login.html', context)
 
-# Create a `logout_request` view to handle sign out request
+# Create a `logout_request` view to handle a logout request.
 def logout_request(request):
     logout(request)
     return redirect('djangoapp:index')
 
-# Create a `registration_request` view to handle sign up request
+# Create a `registration_request` view to handle a sign up request.
 def registration_request(request):
     context = {}
     if request.method == 'GET':
@@ -62,7 +62,8 @@ def registration_request(request):
         except:
             logger.error("New user")
         if not user_exist:
-            user = User.objects.create_user(username=username, first_name=first_name, last_name=last_name,
+            user = User.objects.create_user(username=username, 
+            first_name=first_name, last_name=last_name,
                                             password=password)
             login(request, user)
             return redirect("djangoapp:index")
