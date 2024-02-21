@@ -13,7 +13,7 @@
 
 </head>
 
-    <body>
+<body>
     <!-- Remove this line the first time you edit this file -->
 
     <!--Add a nav bar here -->
@@ -75,7 +75,7 @@
              <tbody>
                 {% for dealer in dealership_list %}
                     <tr>
-                        <td>{{dealer.id}}</td>
+                    <td>{{dealer.id}}</td>
                     <td><a href="{% url 'djangoapp:dealer_details' dealer.id %}">{{dealer.full_name}}</a></td>   
                     <td>{{dealer.city}}</td>
                     <td>{{dealer.address}}</td>
@@ -88,6 +88,8 @@
         </div>
        
     </div>
+</body>
+
     <script>
         $(function() {
           $('#table').bootstrapTable()

@@ -129,7 +129,7 @@ def add_review(request, id):
                 "purchase": request.POST.get("purchasecheck") == 'on',
                 "review": request.POST.get("content"),
                 "purchase_date": request.POST.get("purchasedate"),
-                "car_make": car.car_make.name,
+                "car_make": car.car_make,
                 "car_model": car.name,
                 "car_year": int(car.year.strftime("%Y")),
                 "id": id,
@@ -141,9 +141,9 @@ def add_review(request, id):
             review_post_url = "https://jonasbetfian-5000.theiadockernext-1-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai/api/post_review"
             
             # Make the POST request
-            post_request(review_post_url, payload, id=id)
+            post_request(review_post_url, payload, dealer_id=id)
             
-            return redirect("djangoapp:dealer_details", dealer_id=id)
+            return redirect("djangoapp:dealer_details", dealer_id=dealer_id)
         else:
             # Handle the case where the user is not authenticated
             messages.warning(request, "New review not added. Please log in to add a review !!")
