@@ -122,8 +122,8 @@ def get_dealer_by_id(url, id):
 # - Call get_request() with specified arguments
 # - Get the returned sentiment label such as Positive or Negative
 def analyze_review_sentiments(text):
-    url = "https://606d587f-8fa2-4f2e-ab8f-059714c18894-bluemix.cloudantnosqldb.appdomain.cloud"
-    api_key = "oUTGbNh_tJ2f2UySgtnCVKKTnyVGbCjslLSJ8mQDwjwH"
+    url = " paste your cloudant url"
+    api_key = "paste your cloudant api_key"
     authenticator = IAMAuthenticator(api_key)
     natural_language_understanding = NaturalLanguageUnderstandingV1(version='2021-08-01',authenticator=authenticator)
     natural_language_understanding.set_service_url(url)
